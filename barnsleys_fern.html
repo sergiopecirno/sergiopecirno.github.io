@@ -42,17 +42,22 @@
 
 repeat N times:
     r ← random number in [0, 1)
-
+    # apply (affine transform with probability, r)
     if r &lt; 0.01:
-        (x, y) ← F₁(x, y)
+        (x', y') ← F₁(x, y)
     else if r &lt; 0.86:
-        (x, y) ← F₂(x, y)
+        (x', y') ← F₂(x, y)
     else if r &lt; 0.93:
-        (x, y) ← F₃(x, y)
+        (x', y') ← F₃(x, y)
     else:
-        (x, y) ← F₄(x, y)
+        (x', y') ← F₄(x, y)
 
-    plot(x, y)</code></pre>
+    plot(x, y)
+    
+    x = x' 
+    y = y'
+  </code></pre>
+   
       </section>
 
       <section class="fern-section" aria-labelledby="transforms-title">

@@ -302,6 +302,41 @@ h1 {
   line-height: 1.45;
 }
 
+.reading-link {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  justify-self: start;
+  gap: 1rem;
+  width: min(100%, 280px);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.reading-link:hover,
+.reading-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 154, 138, 0.55);
+  background: rgba(255, 154, 138, 0.07);
+}
+
+.reading-link > div {
+  display: flex;
+  align-items: center;
+}
+
+.reading-link h2 {
+  margin-bottom: 0;
+}
+
+.reading-arrow {
+  flex: 0 0 auto;
+  color: var(--accent-coral);
+  font-size: 1.2rem;
+}
+
 .section {
   border-top: 1px solid var(--line);
   padding: 4.5rem 0;
@@ -417,6 +452,65 @@ h3 {
 
 .site-footer p {
   margin: 0;
+}
+
+.reading-page {
+  width: min(100%, 830px);
+  padding: 3rem 0 4.5rem;
+}
+
+.reading-header {
+  max-width: 680px;
+  margin-bottom: 2.5rem;
+}
+
+.reading-header h1 {
+  grid-area: auto;
+  margin-bottom: 1rem;
+  font-size: clamp(2.7rem, 7vw, 4.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.reading-header > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.book-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.book-entry {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 1.25rem;
+}
+
+.book-entry h2 {
+  margin-bottom: 0.35rem;
+  color: var(--soft);
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.book-author {
+  margin-bottom: 0.75rem;
+  color: var(--accent-warm);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.book-note {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
 }
 
 .fern-page {
@@ -589,6 +683,12 @@ h3 {
     text-align: left;
   }
 
+  .reading-header h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.7rem, 7vw, 4.8rem);
+    text-align: left;
+  }
+
   .portrait {
     justify-self: center;
     margin: 0;
@@ -732,7 +832,8 @@ h3 {
     flex-direction: column;
   }
 
-  .fern-page {
+  .fern-page,
+  .reading-page {
     padding: 1.5rem 0 3rem;
   }
 
@@ -748,6 +849,24 @@ h3 {
     margin-bottom: 0.9rem;
     font-size: clamp(2.65rem, 14vw, 4rem);
     text-align: left;
+  }
+
+  .reading-header {
+    margin-bottom: 2rem;
+  }
+
+  .reading-header h1 {
+    margin-bottom: 0.9rem;
+    font-size: clamp(2.65rem, 14vw, 4rem);
+    text-align: left;
+  }
+
+  .reading-header > p:last-child {
+    font-size: 0.98rem;
+  }
+
+  .book-entry {
+    padding: 1rem;
   }
 
   .fern-intro {
